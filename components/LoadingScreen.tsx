@@ -22,7 +22,7 @@ export default function LoadingScreen() {
           Analyse en cours
         </p>
 
-        <h2 className="font-serif italic text-3xl sm:text-4xl lg:text-5xl ai-shimmer-fast leading-tight text-balance">
+        <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl ai-shimmer-fast leading-tight text-balance">
           L&apos;IA détermine ta situation
         </h2>
 

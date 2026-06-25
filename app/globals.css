@@ -2,8 +2,9 @@
 @import "leaflet/dist/leaflet.css";
 
 @theme {
-  --font-serif: "Instrument Serif", Georgia, "Times New Roman", serif;
-  --font-sans: "DM Sans", "Elza", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  /* Titres / display : Anton (ultra-bold condensé). Corps : Outfit (géométrique). */
+  --font-serif: "Anton", "Arial Narrow", Impact, sans-serif;
+  --font-sans: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
   --color-ink-950: #060606;
   --color-ink-900: #0d0d0d;

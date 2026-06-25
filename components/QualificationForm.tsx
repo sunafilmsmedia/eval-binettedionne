@@ -107,7 +107,7 @@ export default function QualificationForm({ onComplete, onNoSell, onExit }: Prop
           </svg>
           Retour
         </button>
-        <div className="font-serif italic text-sm text-[var(--color-brand-300)]">
+        <div className="font-serif text-sm text-[var(--color-brand-300)] tracking-wide">
           Binette & Dionne
         </div>
       </header>

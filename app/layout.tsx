@@ -1,21 +1,23 @@
 import type { Metadata } from "next";
-import { DM_Sans, Instrument_Serif } from "next/font/google";
+import { Outfit, Anton } from "next/font/google";
 import MetaPixel from "@/components/MetaPixel";
 import Clarity from "@/components/Clarity";
 import "./globals.css";
 
-const dmSans = DM_Sans({
+// Corps de texte — géométrique moderne (proche Nexa).
+const outfit = Outfit({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
 });
 
-const instrumentSerif = Instrument_Serif({
+// Titres / display — ultra-bold condensé à fort impact.
+// Anton n'existe qu'en poids 400 (pas d'italique).
+const anton = Anton({
   subsets: ["latin"],
   variable: "--font-serif",
-  display: "swap",
   weight: "400",
-  style: ["normal", "italic"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -33,7 +35,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr-CA" className={`${dmSans.variable} ${instrumentSerif.variable}`}>
+    <html lang="fr-CA" className={`${outfit.variable} ${anton.variable}`}>
       <body className="min-h-screen antialiased">
         <MetaPixel />
         <Clarity />

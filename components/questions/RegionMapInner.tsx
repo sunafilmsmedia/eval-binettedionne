@@ -88,10 +88,10 @@ export default function RegionMapInner({ value, onChange }: Props) {
             center={[r.lat, r.lng]}
             radius={selected ? 16 : 11}
             pathOptions={{
-              color: selected ? "#1d3eb3" : "#3a6dff",
+              color: selected ? "#a10f18" : "#e11d2a",
               weight: selected ? 4 : 3,
               opacity: 1,
-              fillColor: selected ? "#3a6dff" : "#ffffff",
+              fillColor: selected ? "#e11d2a" : "#ffffff",
               fillOpacity: selected ? 0.95 : 0.92,
             }}
             eventHandlers={{
