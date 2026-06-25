@@ -1,0 +1,186 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+@theme {
+  --font-serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --font-sans: "DM Sans", "Elza", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  --color-ink-950: #060606;
+  --color-ink-900: #0d0d0d;
+  --color-ink-800: #141414;
+  --color-ink-700: #1f1f1f;
+
+  /* Échelle "brand" remappée : blancs/gris clairs pour le texte (100-200),
+     rouge Via Capitale pour l'accent et les actions (300-900). Identité
+     noir & blanc + accent rouge. */
+  --color-brand-50: #fff5f5;
+  --color-brand-100: #f6f7f9;
+  --color-brand-200: #dfe3e8;
+  --color-brand-300: #f87171;
+  --color-brand-400: #ef4444;
+  --color-brand-500: #e11d2a;
+  --color-brand-600: #c81420;
+  --color-brand-700: #a10f18;
+  --color-brand-800: #7a0b12;
+  --color-brand-900: #4d070b;
+
+  /* Accent secondaire (anciennement doré) — repris en rouge pour rester
+     dans la palette Via Capitale. */
+  --color-gold: #e11d2a;
+  --color-gold-soft: #f87171;
+
+  /* Couleur franchise Via Capitale */
+  --color-franchise: #e11d2a;
+}
+
+html, body {
+  background: linear-gradient(180deg, #0a0a0a 0%, #111111 50%, #0a0a0a 100%);
+  color: #e8e8ea;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  min-height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Glassmorphism utility */
+@utility glass-card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 20px 60px -20px rgba(0, 0, 0, 0.65),
+    0 0 0 1px rgba(225, 29, 42, 0.05) inset;
+}
+
+@utility glass-card-light {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow:
+    0 30px 80px -30px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+/* AI shimmer — dégradé multicolore lent, reste doux */
+@keyframes ai-shimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+.ai-shimmer {
+  background-image: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #f87171 18%,
+    #e11d2a 36%,
+    #ffffff 54%,
+    #fca5a5 72%,
+    #ffffff 100%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: ai-shimmer 8s linear infinite;
+}
+.ai-shimmer-fast {
+  background-image: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #f87171 18%,
+    #e11d2a 36%,
+    #ffffff 54%,
+    #fca5a5 72%,
+    #ffffff 100%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: ai-shimmer 2.5s linear infinite;
+}
+
+/* Pulse dot */
+@keyframes soft-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.6; }
+}
+
+.pulse-dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: currentColor;
+  animation: soft-pulse 1.8s ease-in-out infinite;
+  opacity: 0.5;
+}
+
+/* Carte fond non-interactive */
+.map-mono {
+  filter: grayscale(1) brightness(0.62) contrast(1.08) opacity(0.5);
+}
+
+.map-no-interaction {
+  pointer-events: none !important;
+}
+
+/* Leaflet attribution discrète */
+.leaflet-container {
+  background: transparent !important;
+  font-family: var(--font-sans);
+}
+.leaflet-control-attribution {
+  background: rgba(10, 10, 10, 0.6) !important;
+  color: rgba(232, 232, 234, 0.5) !important;
+  font-size: 10px !important;
+  padding: 2px 6px !important;
+  border-radius: 4px;
+}
+.leaflet-control-attribution a {
+  color: rgba(248, 113, 113, 0.8) !important;
+}
+
+/* Étiquettes (tooltips) Leaflet sur la carte régions */
+.region-label {
+  background: rgba(255, 255, 255, 0.96) !important;
+  border: 1px solid rgba(225, 29, 42, 0.3) !important;
+  color: #1a1a1a !important;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 12px;
+  padding: 4px 10px !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 6px 20px -6px rgba(0, 0, 0, 0.45) !important;
+}
+.region-label::before {
+  display: none !important;
+}
+
+/* Scrollbar discrète */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(225, 29, 42, 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(225, 29, 42, 0.4); }
+
+/* Inputs sans bordures par défaut */
+input, textarea, select {
+  background: transparent;
+  outline: none;
+  border: none;
+}
+input:focus, textarea:focus, select:focus { outline: none; }
