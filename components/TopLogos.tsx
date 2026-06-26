@@ -13,15 +13,13 @@ export default function TopLogos() {
         className="fixed top-4 left-4 sm:top-6 sm:left-6 z-30 pointer-events-none"
         aria-hidden
       >
-        {/* TODO assets : remplacer par le vrai logo Binette & Dionne
-            (PNG transparent, texte blanc) et ajuster width/height au ratio réel. */}
         <Image
           src="/logo-binettedionne.png"
           alt="Binette & Dionne"
-          width={1200}
-          height={300}
+          width={334}
+          height={367}
           priority
-          className="h-7 sm:h-9 w-auto"
+          className="h-10 sm:h-14 w-auto"
         />
       </motion.div>
 
