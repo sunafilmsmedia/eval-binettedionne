@@ -8,11 +8,12 @@ const TileLayer = dynamic(() => import("react-leaflet").then((m) => m.TileLayer)
 
 export default function HeroBackground() {
   return (
-    <div className="absolute inset-0 -z-10 overflow-hidden">
+    <div className="absolute inset-0 z-0 overflow-hidden">
       <div className="map-mono map-no-interaction absolute inset-0">
         <MapContainer
           center={REGION_CENTER}
-          zoom={11}
+          zoom={13}
+          fadeAnimation={false}
           zoomControl={false}
           attributionControl={true}
           dragging={false}
@@ -23,6 +24,8 @@ export default function HeroBackground() {
           keyboard={false}
           style={{ width: "100%", height: "100%" }}
         >
+          {/* Tuile claire CartoDB (Positron) grayscalée par .map-mono :
+              réseau de rues gris/blanc bien lisible sur le fond noir du hero. */}
           <TileLayer
             url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
             attribution='&copy; OpenStreetMap, &copy; CARTO'
@@ -31,19 +34,20 @@ export default function HeroBackground() {
         </MapContainer>
       </div>
 
-      {/* Voile blanc dégradé pour lisibilité */}
+      {/* Voile noir dégradé — laisse voir la carte au centre, fond noir sur les bords */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse at 50% 30%, rgba(8, 14, 38, 0.35) 0%, rgba(5, 11, 28, 0.85) 60%, rgba(4, 8, 24, 0.97) 100%)",
+            "radial-gradient(ellipse at 50% 38%, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0.92) 100%)",
         }}
       />
+      {/* Renfort bas pour la zone CTA */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0) 40%, rgba(255,255,255,0) 100%)",
+            "linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.60) 78%, rgba(0,0,0,0.95) 100%)",
         }}
       />
     </div>

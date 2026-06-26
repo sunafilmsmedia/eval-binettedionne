@@ -83,7 +83,7 @@ export default function Home() {
     stage === "hero" || stage === "preReveal" || stage === "results" || stage === "noSell";
 
   return (
-    <main className="relative min-h-screen overflow-hidden">
+    <main className="relative isolate min-h-screen overflow-hidden">
       <AnimatePresence>
         {stage === "hero" && (
           <motion.div
@@ -92,13 +92,14 @@ export default function Home() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.6 }}
-            className="absolute inset-0 -z-10"
+            className="absolute inset-0 z-0"
           >
             <HeroBackground />
           </motion.div>
         )}
       </AnimatePresence>
 
+      <div className="relative z-10">
       <AnimatePresence mode="wait">
         {stage === "hero" && (
           <motion.div key="hero" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.5 }}>
@@ -140,6 +141,7 @@ export default function Home() {
           </motion.div>
         )}
       </AnimatePresence>
+      </div>
 
       {/* Logos + badge courtier — visibles sur le hero, les résultats et la page no-sell */}
       <AnimatePresence>
