@@ -20,7 +20,7 @@ Site de qualification de leads pour **Félix-Antoine Binette & Kellie Dionne**
 | Photo Félix-Antoine | `public/felix.jpg` | ✅ intégrée (badge) |
 | Photo Kellie | `public/kellie.jpg` | ✅ intégrée (badge) |
 | Logo Binette & Dionne (PNG blanc) | `public/logo-binettedionne.png` | ✅ intégré (monogramme B/D, haut-gauche) |
-| Logo Via Capitale (PNG blanc) | `public/logo-viacapitale.png` | **placeholder transparent** — à fournir (haut-droite) |
+| Logo Via Capitale Accès | `public/logo-viacapitale.png` | ✅ intégré (losange, haut-droite) |
 | Microsoft Clarity Project ID | `components/Clarity.tsx` (`CLARITY_PROJECT_ID`) | **vide** — script désactivé tant que vide |
 | Webhook CRM (GHL) | env `CRM_WEBHOOK_URL` (`.env.local` + Vercel) | **vide** |
 | Webhook secret (optionnel) | env `CRM_WEBHOOK_SECRET` | non défini |

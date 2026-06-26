@@ -30,15 +30,13 @@ export default function TopLogos() {
         className="fixed top-4 right-4 sm:top-6 sm:right-6 z-30 pointer-events-none"
         aria-hidden
       >
-        {/* TODO assets : remplacer par le vrai logo Via Capitale
-            (PNG transparent, texte blanc) et ajuster width/height au ratio réel. */}
         <Image
           src="/logo-viacapitale.png"
-          alt="Via Capitale"
-          width={1000}
-          height={300}
+          alt="Via Capitale Accès"
+          width={1180}
+          height={1180}
           priority
-          className="h-7 sm:h-9 w-auto"
+          className="h-12 sm:h-16 w-auto"
         />
       </motion.div>
     </>
