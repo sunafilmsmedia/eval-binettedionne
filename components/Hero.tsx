@@ -26,12 +26,6 @@ export default function Hero({ onStart }: HeroProps) {
           Est-ce le bon moment pour vendre votre propriété ?
         </h1>
 
-        {/* Sous-titre */}
-        <p className="mt-6 text-base sm:text-lg text-white/70 max-w-xl mx-auto leading-relaxed text-balance">
-          Réponds à une dizaine de questions et reçois une analyse honnête et confidentielle
-          de ton timing, basée sur ta plus-value, ton équité et ta situation.
-        </p>
-
         {/* Hook signature */}
         <motion.p
           initial={{ opacity: 0 }}
