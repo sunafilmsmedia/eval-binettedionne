@@ -22,12 +22,12 @@ export default function Hero({ onStart }: HeroProps) {
         </div>
 
         {/* Titre H1 */}
-        <h1 className="font-serif font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-[var(--color-brand-500)] leading-[1.08] tracking-tight text-balance text-shadow-title">
+        <h1 className="font-serif font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-white leading-[1.08] tracking-tight text-balance text-shadow-title">
           Est-ce le bon moment pour vendre votre propriété ?
         </h1>
 
         {/* Sous-titre */}
-        <p className="mt-6 text-base sm:text-lg text-slate-400 max-w-xl mx-auto leading-relaxed text-balance">
+        <p className="mt-6 text-base sm:text-lg text-white/70 max-w-xl mx-auto leading-relaxed text-balance">
           Réponds à une dizaine de questions et reçois une analyse honnête et confidentielle
           de ton timing, basée sur ta plus-value, ton équité et ta situation.
         </p>

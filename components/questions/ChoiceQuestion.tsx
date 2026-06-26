@@ -39,7 +39,7 @@ export default function ChoiceQuestion({ choices, value, onChange }: Props) {
                   {c.label}
                 </p>
                 {c.hint && (
-                  <p className="text-xs text-slate-400 mt-0.5">{c.hint}</p>
+                  <p className="text-xs text-white/70 mt-0.5">{c.hint}</p>
                 )}
               </div>
               <span

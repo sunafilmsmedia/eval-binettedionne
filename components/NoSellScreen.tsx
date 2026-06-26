@@ -42,7 +42,7 @@ export default function NoSellScreen({ answers: _answers, onRestart }: Props) {
         <h1 className="font-serif text-4xl sm:text-5xl text-[var(--color-brand-100)] leading-[1.1] tracking-tight text-balance">
           Pas pressé de vendre ? Aucun souci.
         </h1>
-        <p className="mt-5 text-base sm:text-lg text-slate-400 leading-relaxed text-balance max-w-md mx-auto">
+        <p className="mt-5 text-base sm:text-lg text-white/70 leading-relaxed text-balance max-w-md mx-auto">
           On ne te recontactera pas. Reviens nous voir quand tu seras prêt à explorer
           sérieusement la vente — l&apos;analyse sera toujours là, gratuite et en 3 minutes.
         </p>

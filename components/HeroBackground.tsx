@@ -39,7 +39,7 @@ export default function HeroBackground() {
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse at 50% 38%, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0.92) 100%)",
+            "radial-gradient(ellipse at 50% 38%, rgba(40,8,11,0.10) 0%, rgba(40,8,11,0.55) 55%, rgba(40,8,11,0.92) 100%)",
         }}
       />
       {/* Renfort bas pour la zone CTA */}
@@ -47,7 +47,7 @@ export default function HeroBackground() {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.60) 78%, rgba(0,0,0,0.95) 100%)",
+            "linear-gradient(180deg, rgba(40,8,11,0) 40%, rgba(40,8,11,0.60) 78%, rgba(40,8,11,0.95) 100%)",
         }}
       />
     </div>

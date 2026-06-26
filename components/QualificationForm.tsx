@@ -130,7 +130,7 @@ export default function QualificationForm({ onComplete, onNoSell, onExit }: Prop
                 {current.title}
               </h2>
               {current.subtitle && (
-                <p className="mt-2.5 text-sm sm:text-base text-slate-400">{current.subtitle}</p>
+                <p className="mt-2.5 text-sm sm:text-base text-white/70">{current.subtitle}</p>
               )}
             </div>
 
@@ -154,7 +154,7 @@ export default function QualificationForm({ onComplete, onNoSell, onExit }: Prop
             disabled={index === 0}
             className="
               px-5 py-2.5 rounded-full text-sm font-medium
-              text-slate-400 hover:text-[var(--color-brand-200)]
+              text-white/70 hover:text-[var(--color-brand-200)]
               disabled:opacity-30 disabled:cursor-not-allowed
               transition-colors
             "

@@ -112,7 +112,7 @@ export default function ContactForm({ answers, verdict, onSubmitted, gated }: Pr
           ? "Veux-tu recevoir les ventes récentes de ton secteur ?"
           : "Où veux-tu recevoir une analyse gratuite de ta propriété ?"}
       </h3>
-      <p className="mt-2 text-sm sm:text-base text-slate-400 leading-relaxed">
+      <p className="mt-2 text-sm sm:text-base text-white/70 leading-relaxed">
         {gated
           ? "Un courtier t'appellera dans les 24 h pour te présenter ta note et te guider."
           : verdict === "defavorable"
@@ -168,7 +168,7 @@ export default function ContactForm({ answers, verdict, onSubmitted, gated }: Pr
             <path d="M2 6.5L4.5 9L10 3.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </span>
-        <span className="text-xs sm:text-sm text-slate-400 leading-relaxed">
+        <span className="text-xs sm:text-sm text-white/70 leading-relaxed">
           {!gated && verdict === "defavorable" ? (
             <>
               J&apos;accepte de recevoir les mises à jour du marché de mon secteur

@@ -47,7 +47,7 @@ export default function CurrencyQuestion({
             tracking-wide
           "
         />
-        <span className="text-sm text-slate-400">CAD</span>
+        <span className="text-sm text-white/70">CAD</span>
       </div>
       {helper && <p className="text-xs text-slate-500 mt-3">{helper}</p>}
     </div>

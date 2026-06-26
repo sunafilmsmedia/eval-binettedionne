@@ -30,7 +30,7 @@ export default function LoadingScreen() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8, duration: 0.6 }}
-          className="mt-8 text-sm text-slate-400"
+          className="mt-8 text-sm text-white/70"
         >
           Quelques secondes — on combine ta plus-value, ton équité et ta situation
           pour te donner une réponse honnête.

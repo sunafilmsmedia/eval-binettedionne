@@ -40,7 +40,7 @@ export default function NumberQuestion({
               placeholder:text-white/20 focus:outline-none w-full
             "
           />
-          <span className="text-base text-slate-400 mb-2">{suffix}</span>
+          <span className="text-base text-white/70 mb-2">{suffix}</span>
         </div>
 
         <div className="mt-6">

@@ -11,32 +11,33 @@
   --color-ink-800: #141414;
   --color-ink-700: #1f1f1f;
 
-  /* Échelle "brand" remappée : blancs/gris clairs pour le texte (100-200),
-     rouge Via Capitale pour l'accent et les actions (300-900). Identité
-     noir & blanc + accent rouge. */
+  /* Échelle "brand" pour un thème ROUGE FONCÉ + lettres blanches :
+     100-200 = blancs/rosés très clairs (texte & titres),
+     300-400 = rosé clair (accents lisibles sur le fond bordeaux),
+     500-900 = rouges vifs->profonds (boutons, surbrillances). */
   --color-brand-50: #fff5f5;
-  --color-brand-100: #f6f7f9;
-  --color-brand-200: #dfe3e8;
-  --color-brand-300: #f87171;
-  --color-brand-400: #ef4444;
-  --color-brand-500: #e11d2a;
-  --color-brand-600: #c81420;
-  --color-brand-700: #a10f18;
+  --color-brand-100: #ffffff;
+  --color-brand-200: #fbe3e4;
+  --color-brand-300: #ff9aa0;
+  --color-brand-400: #f5616b;
+  --color-brand-500: #ec2b37;
+  --color-brand-600: #cf1c28;
+  --color-brand-700: #ad141f;
   --color-brand-800: #7a0b12;
   --color-brand-900: #4d070b;
 
-  /* Accent secondaire (anciennement doré) — repris en rouge pour rester
-     dans la palette Via Capitale. */
-  --color-gold: #e11d2a;
-  --color-gold-soft: #f87171;
+  /* Accent secondaire (anciennement doré) — rosé clair, ressort sur le bordeaux. */
+  --color-gold: #ff8a90;
+  --color-gold-soft: #ffc4c8;
 
   /* Couleur franchise Via Capitale */
-  --color-franchise: #e11d2a;
+  --color-franchise: #ec2b37;
 }
 
 html, body {
-  background: linear-gradient(180deg, #0a0a0a 0%, #111111 50%, #0a0a0a 100%);
-  color: #e8e8ea;
+  /* Fond rouge foncé / bordeaux */
+  background: linear-gradient(180deg, #3d0a0e 0%, #4d0d12 50%, #320709 100%);
+  color: #fdecec;
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;

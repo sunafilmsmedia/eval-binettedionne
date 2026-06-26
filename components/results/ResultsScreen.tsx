@@ -83,7 +83,7 @@ export default function ResultsScreen({ analyze, answers, revealChoice, onRestar
           <h1 className="font-serif text-4xl sm:text-5xl text-[var(--color-brand-100)] leading-[1.1] tracking-tight text-balance">
             Ton analyse est prête.
           </h1>
-          <p className="mt-5 text-base sm:text-lg text-slate-400 leading-relaxed text-balance max-w-md mx-auto">
+          <p className="mt-5 text-base sm:text-lg text-white/70 leading-relaxed text-balance max-w-md mx-auto">
             Laisse-nous ton contact pour la débloquer et recevoir ton appel personnalisé
             avec ton courtier.
           </p>
@@ -135,7 +135,7 @@ export default function ResultsScreen({ analyze, answers, revealChoice, onRestar
         <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-[var(--color-brand-100)] leading-[1.05] tracking-tight text-balance">
           {verdictHeadline}
         </h1>
-        <p className="mt-5 text-base sm:text-lg text-slate-400 leading-relaxed text-balance max-w-2xl mx-auto">
+        <p className="mt-5 text-base sm:text-lg text-white/70 leading-relaxed text-balance max-w-2xl mx-auto">
           {report.summary}
         </p>
       </motion.div>
@@ -180,7 +180,7 @@ export default function ResultsScreen({ analyze, answers, revealChoice, onRestar
           >
             <p className="text-[11px] uppercase tracking-wider text-slate-500">{s.label}</p>
             <p className="font-serif text-2xl text-[var(--color-brand-100)] mt-1">{s.value}</p>
-            <p className="text-xs text-slate-400 mt-2 leading-relaxed">{s.detail}</p>
+            <p className="text-xs text-white/70 mt-2 leading-relaxed">{s.detail}</p>
           </motion.div>
         ))}
       </div>
@@ -268,7 +268,7 @@ export default function ResultsScreen({ analyze, answers, revealChoice, onRestar
               </span>
               <div>
                 <p className="font-medium text-[var(--color-brand-100)]">{s.title}</p>
-                <p className="text-sm text-slate-400 mt-1 leading-relaxed">{s.description}</p>
+                <p className="text-sm text-white/70 mt-1 leading-relaxed">{s.description}</p>
               </div>
             </li>
           ))}
@@ -279,7 +279,7 @@ export default function ResultsScreen({ analyze, answers, revealChoice, onRestar
       <div className="mt-12 mb-24 sm:mb-12 text-center">
         <button
           onClick={onRestart}
-          className="text-sm text-slate-400 hover:text-[var(--color-brand-200)] transition-colors underline underline-offset-4 decoration-white/15 hover:decoration-[var(--color-brand-400)]"
+          className="text-sm text-white/70 hover:text-[var(--color-brand-200)] transition-colors underline underline-offset-4 decoration-white/15 hover:decoration-[var(--color-brand-400)]"
         >
           Refaire une évaluation
         </button>

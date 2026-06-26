@@ -52,7 +52,7 @@ export default function PreRevealScreen({ onContinue }: Props) {
         <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-[var(--color-brand-100)] leading-[1.05] tracking-tight text-balance">
           Ta réponse est prête.
         </h1>
-        <p className="mt-5 text-base sm:text-lg text-slate-400 leading-relaxed text-balance max-w-md mx-auto">
+        <p className="mt-5 text-base sm:text-lg text-white/70 leading-relaxed text-balance max-w-md mx-auto">
           Avant de voir la réponse, veux-tu recevoir une analyse gratuite de ta propriété ?
         </p>
 
