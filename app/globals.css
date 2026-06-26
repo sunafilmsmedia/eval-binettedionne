@@ -2,8 +2,8 @@
 @import "leaflet/dist/leaflet.css";
 
 @theme {
-  /* Titres / display : Anton (ultra-bold condensé). Corps : Outfit (géométrique). */
-  --font-serif: "Anton", "Arial Narrow", Impact, sans-serif;
+  /* Titres / display : Playfair Display (serif élégant). Corps : Outfit (géométrique). */
+  --font-serif: "Playfair Display", Georgia, "Times New Roman", serif;
   --font-sans: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
   --color-ink-950: #060606;
@@ -70,6 +70,11 @@ body {
 
 @utility text-balance {
   text-wrap: balance;
+}
+
+/* Petit ombrage noir pour les titres rouges (lisibilité + relief « classe ») */
+@utility text-shadow-title {
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.6), 0 2px 8px rgba(0, 0, 0, 0.45);
 }
 
 /* AI shimmer — dégradé multicolore lent, reste doux */

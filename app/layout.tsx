@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Outfit, Anton } from "next/font/google";
+import { Outfit, Playfair_Display } from "next/font/google";
 import MetaPixel from "@/components/MetaPixel";
 import Clarity from "@/components/Clarity";
 import "./globals.css";
@@ -11,13 +11,12 @@ const outfit = Outfit({
   display: "swap",
 });
 
-// Titres / display — ultra-bold condensé à fort impact.
-// Anton n'existe qu'en poids 400 (pas d'italique).
-const anton = Anton({
+// Titres / display — serif élégant haut de gamme (look « classe »).
+const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-serif",
-  weight: "400",
   display: "swap",
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
@@ -35,7 +34,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr-CA" className={`${outfit.variable} ${anton.variable}`}>
+    <html lang="fr-CA" className={`${outfit.variable} ${playfair.variable}`}>
       <body className="min-h-screen antialiased">
         <MetaPixel />
         <Clarity />

@@ -22,7 +22,7 @@ export default function Hero({ onStart }: HeroProps) {
         </div>
 
         {/* Titre H1 */}
-        <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-[var(--color-brand-100)] leading-[1.05] tracking-tight text-balance">
+        <h1 className="font-serif font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-[var(--color-brand-500)] leading-[1.08] tracking-tight text-balance text-shadow-title">
           Est-ce le bon moment pour vendre votre propriété ?
         </h1>
 
