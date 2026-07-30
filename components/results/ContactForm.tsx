@@ -114,7 +114,7 @@ export default function ContactForm({ answers, verdict, onSubmitted, gated }: Pr
       </h3>
       <p className="mt-2 text-sm sm:text-base text-white/70 leading-relaxed">
         {gated
-          ? "Un courtier t'appellera dans les 24 h pour te présenter ta note et te guider."
+          ? "Tu recevras ici une analyse complète, complètement gratuite."
           : verdict === "defavorable"
           ? "On t'envoie une mise à jour quand le marché de ton secteur bouge — sans pression."
           : "Reçois ton plan personnalisé pour vendre ta propriété."}
