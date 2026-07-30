@@ -23,6 +23,9 @@ export default function QualificationForm({ onComplete, onNoSell, onExit }: Prop
   const [answers, setAnswers] = useState<Answers>({});
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState<1 | -1>(1);
+  // Confirmation « Bien reçu » affichée après le clic sur la carte, juste
+  // avant de passer automatiquement à l'analyse.
+  const [confirming, setConfirming] = useState(false);
   const autoAdvanceTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const visible = useMemo(() => getVisibleQuestions(answers), [answers]);
@@ -92,6 +95,22 @@ export default function QualificationForm({ onComplete, onNoSell, onExit }: Prop
     [answers, onComplete, onNoSell]
   );
 
+  // Clic sur la carte (dernière question) : on enregistre le secteur, on
+  // affiche « Bien reçu », puis on lance l'analyse automatiquement.
+  const selectRegion = useCallback(
+    (id: string) => {
+      if (confirming) return;
+      const nextAnswers: Answers = { ...answers, region: id };
+      setAnswers(nextAnswers);
+      setConfirming(true);
+      if (autoAdvanceTimer.current) clearTimeout(autoAdvanceTimer.current);
+      autoAdvanceTimer.current = setTimeout(() => {
+        onComplete(nextAnswers);
+      }, 1100);
+    },
+    [answers, confirming, onComplete]
+  );
+
   if (!current) return null;
 
   return (
@@ -138,6 +157,8 @@ export default function QualificationForm({ onComplete, onNoSell, onExit }: Prop
               questionId={current.id}
               answers={answers}
               onUpdate={updateAndMaybeAdvance}
+              onRegionSelect={selectRegion}
+              confirming={confirming}
               autoAdvance={!!current.autoAdvance}
               choices={current.choices}
             />
@@ -215,7 +236,9 @@ interface RendererProps {
   answers: Answers;
   choices?: { value: string; label: string; hint?: string }[];
   autoAdvance: boolean;
+  confirming: boolean;
   onUpdate: (partial: Partial<Answers>, autoAdvance: boolean) => void;
+  onRegionSelect: (id: string) => void;
 }
 
 function QuestionRenderer({
@@ -223,7 +246,9 @@ function QuestionRenderer({
   answers,
   choices,
   autoAdvance,
+  confirming,
   onUpdate,
+  onRegionSelect,
 }: RendererProps) {
   switch (questionId) {
     case "propertyType":
@@ -296,7 +321,8 @@ function QuestionRenderer({
       return (
         <RegionMap
           value={answers.region}
-          onChange={(id) => onUpdate({ region: id }, false)}
+          onChange={onRegionSelect}
+          confirming={confirming}
         />
       );
     default:
