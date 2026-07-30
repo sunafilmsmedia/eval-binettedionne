@@ -2,9 +2,8 @@
 
 import Script from "next/script";
 
-// TODO : renseigner le Project ID Microsoft Clarity du courtier
-// (vide pour l'instant — le script ne se charge pas tant qu'il est absent).
-const CLARITY_PROJECT_ID = "";
+// Project ID Microsoft Clarity de Binette & Dionne.
+const CLARITY_PROJECT_ID = "xupl3w2k9n";
 
 export default function Clarity() {
   if (!CLARITY_PROJECT_ID) return null;
