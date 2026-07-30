@@ -22,7 +22,7 @@ Site de qualification de leads pour **Félix-Antoine Binette & Kellie Dionne**
 | Logo Binette & Dionne (PNG blanc) | `public/logo-binettedionne.png` | ✅ intégré (monogramme B/D, haut-gauche) |
 | Logo Via Capitale Accès | `public/logo-viacapitale.png` | ✅ intégré (losange, haut-droite) |
 | Microsoft Clarity Project ID | `components/Clarity.tsx` | ✅ `xupl3w2k9n` |
-| Webhook CRM (GHL) | env `CRM_WEBHOOK_URL` (`.env.local` + Vercel) | **vide** |
+| Webhook CRM (GHL) | env `CRM_WEBHOOK_URL` (`.env.local` + Vercel) | ✅ opérationnel (local + prod, test OK) |
 | Webhook secret (optionnel) | env `CRM_WEBHOOK_SECRET` | non défini |
 | Clé Anthropic (optionnelle) | env `ANTHROPIC_API_KEY` | non définie → rapport fallback déterministe |
 | Secteurs | `lib/regions.ts` | proposés — **à faire valider par le courtier** |
