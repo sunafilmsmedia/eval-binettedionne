@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 
 // Un seul courtier affiché par visite, choisi aléatoirement (Félix ou Kellie).
@@ -9,16 +8,12 @@ const BROKERS = [
   {
     name: "Félix-Antoine Binette",
     title: "Courtier immobilier — Victoriaville",
-    photo: "/felix.jpg",
-    objectPosition: "50% 22%",
     phoneDisplay: "819 350-4354",
     phoneTel: "+18193504354",
   },
   {
     name: "Kellie Dionne",
     title: "Courtière immobilière — Victoriaville",
-    photo: "/kellie.jpg",
-    objectPosition: "50% 18%",
     phoneDisplay: "819 740-8066",
     phoneTel: "+18197408066",
   },
@@ -54,23 +49,6 @@ export default function BrokerBadge() {
         transition-shadow duration-300
       "
     >
-      <div className="relative shrink-0">
-        <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden ring-2 ring-white shadow-md bg-slate-100">
-          <Image
-            src={b.photo}
-            alt={b.name}
-            fill
-            sizes="64px"
-            className="object-cover"
-            style={{ objectPosition: b.objectPosition }}
-            priority
-          />
-        </div>
-        <span className="absolute -bottom-0.5 -right-0.5 w-4 h-4 bg-emerald-500 rounded-full ring-[2.5px] ring-white" aria-hidden>
-          <span className="absolute inset-0 rounded-full bg-emerald-500 animate-ping opacity-50" />
-        </span>
-      </div>
-
       <div className="min-w-0 flex-1">
         <div className="flex items-center gap-1.5">
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />

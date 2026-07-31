@@ -80,9 +80,6 @@ export default function PreRevealScreen({ onContinue }: Props) {
           <span className="block font-medium text-base sm:text-lg">
             Oui, je veux voir la réponse
           </span>
-          <span className="block text-xs sm:text-sm text-[var(--color-brand-100)]/80 mt-1">
-            Reçois ton analyse par téléphone
-          </span>
           <span className="absolute right-5 top-1/2 -translate-y-1/2 flex items-center justify-center w-5 h-5">
             {ready ? (
               <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2">
