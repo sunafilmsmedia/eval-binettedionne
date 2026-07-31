@@ -4,7 +4,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import Hero from "@/components/Hero";
-import BrokerBadge from "@/components/BrokerBadge";
 import TopLogos from "@/components/TopLogos";
 import QualificationForm from "@/components/QualificationForm";
 import LoadingScreen from "@/components/LoadingScreen";
@@ -154,7 +153,6 @@ export default function Home() {
             transition={{ duration: 0.4 }}
           >
             <TopLogos />
-            <BrokerBadge />
           </motion.div>
         )}
       </AnimatePresence>
