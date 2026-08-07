@@ -126,7 +126,7 @@ export const QUESTIONS: QuestionDef[] = [
     id: "region",
     kind: "region",
     title: "Dans quel secteur se trouve ta propriété ?",
-    subtitle: "Touche un marqueur sur la carte.",
+    subtitle: "Commence à taper le nom de ta ville ou ton secteur.",
   },
 ];
 

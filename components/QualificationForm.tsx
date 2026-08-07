@@ -9,7 +9,7 @@ import ChoiceQuestion from "./questions/ChoiceQuestion";
 import BooleanQuestion from "./questions/BooleanQuestion";
 import NumberQuestion from "./questions/NumberQuestion";
 import CurrencyQuestion from "./questions/CurrencyQuestion";
-import RegionMap from "./questions/RegionMap";
+import RegionSelect from "./questions/RegionSelect";
 
 interface Props {
   onComplete: (answers: Answers) => void;
@@ -166,7 +166,8 @@ export default function QualificationForm({ onComplete, onNoSell, onExit }: Prop
         </AnimatePresence>
       </div>
 
-      {/* Footer controls */}
+      {/* Footer controls — masqué pendant la confirmation « Bien reçu » */}
+      {!confirming && (
       <footer className="mt-8 sm:mt-10 pt-6 border-t border-white/5">
         <div className="flex items-center justify-between gap-4">
           <button
@@ -227,6 +228,7 @@ export default function QualificationForm({ onComplete, onNoSell, onExit }: Prop
           )}
         </div>
       </footer>
+      )}
     </div>
   );
 }
@@ -319,7 +321,7 @@ function QuestionRenderer({
       );
     case "region":
       return (
-        <RegionMap
+        <RegionSelect
           value={answers.region}
           onChange={onRegionSelect}
           confirming={confirming}

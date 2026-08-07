@@ -19,7 +19,6 @@ export default function ContactForm({ answers, verdict, onSubmitted, gated }: Pr
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [consent, setConsent] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -30,7 +29,6 @@ export default function ContactForm({ answers, verdict, onSubmitted, gated }: Pr
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
       return setError("Format de courriel invalide.");
     }
-    if (!consent) return setError("Merci de cocher la case de consentement.");
 
     setSubmitting(true);
     try {
@@ -48,7 +46,7 @@ export default function ContactForm({ answers, verdict, onSubmitted, gated }: Pr
           name: name.trim(),
           email: email.trim(),
           phone: phone.trim() || undefined,
-          consent,
+          consent: true,
           answers,
           leadType,
         }),
@@ -149,42 +147,7 @@ export default function ContactForm({ answers, verdict, onSubmitted, gated }: Pr
         />
       </div>
 
-      <label className="flex items-start gap-3 cursor-pointer group select-none mt-5">
-        <span className="relative shrink-0 mt-0.5">
-          <input
-            type="checkbox"
-            checked={consent}
-            onChange={(e) => setConsent(e.target.checked)}
-            className="peer sr-only"
-          />
-          <span className="block w-5 h-5 rounded-md border border-white/20 bg-white/[0.04] peer-checked:bg-[var(--color-brand-500)] peer-checked:border-[var(--color-brand-400)] transition-colors" />
-          <svg
-            className="absolute inset-0 m-auto w-3 h-3 text-white opacity-0 peer-checked:opacity-100 transition-opacity"
-            viewBox="0 0 12 12"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-          >
-            <path d="M2 6.5L4.5 9L10 3.5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </span>
-        <span className="text-xs sm:text-sm text-white/70 leading-relaxed">
-          {!gated && verdict === "defavorable" ? (
-            <>
-              J&apos;accepte de recevoir les mises à jour du marché de mon secteur
-              par courriel. <span className="text-[var(--color-gold-soft)]">Aucun courtier
-              ne va m&apos;appeler — c&apos;est juste de l&apos;information.</span>
-            </>
-          ) : (
-            <>
-              J&apos;accepte que Binette &amp; Dionne m&apos;envoient mon analyse gratuite et
-              puisse me contacter au sujet de mon évaluation.
-            </>
-          )}
-        </span>
-      </label>
-
-      {error && <p className="mt-3 text-sm text-rose-400 text-center">{error}</p>}
+      {error && <p className="mt-4 text-sm text-rose-400 text-center">{error}</p>}
 
       <button
         type="button"
@@ -219,6 +182,10 @@ export default function ContactForm({ answers, verdict, onSubmitted, gated }: Pr
           </>
         )}
       </button>
+
+      <p className="mt-3 text-[11px] leading-relaxed text-white/40 text-center">
+        En continuant, tu acceptes que Binette &amp; Dionne t&apos;envoient ton analyse et te contactent à ce sujet.
+      </p>
     </motion.section>
   );
 }

@@ -84,8 +84,7 @@ export default function ResultsScreen({ analyze, answers, revealChoice, onRestar
             Ton analyse est prête.
           </h1>
           <p className="mt-5 text-base sm:text-lg text-white/70 leading-relaxed text-balance max-w-md mx-auto">
-            Laisse-nous ton contact pour la débloquer et recevoir ton appel personnalisé
-            avec ton courtier.
+            Laisse-nous ton contact pour débloquer ton analyse complète, gratuitement.
           </p>
         </motion.div>
 
