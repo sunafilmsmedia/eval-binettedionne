@@ -29,6 +29,10 @@ export default function ContactForm({ answers, verdict, onSubmitted, gated }: Pr
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
       return setError("Format de courriel invalide.");
     }
+    if (!phone.trim()) return setError("Ton numéro de téléphone est requis.");
+    if (phone.replace(/\D/g, "").length < 10) {
+      return setError("Numéro de téléphone invalide (10 chiffres).");
+    }
 
     setSubmitting(true);
     try {
@@ -45,7 +49,7 @@ export default function ContactForm({ answers, verdict, onSubmitted, gated }: Pr
         body: JSON.stringify({
           name: name.trim(),
           email: email.trim(),
-          phone: phone.trim() || undefined,
+          phone: phone.trim(),
           consent: true,
           answers,
           leadType,
@@ -137,13 +141,13 @@ export default function ContactForm({ answers, verdict, onSubmitted, gated }: Pr
           placeholder="Marie"
         />
         <Field
-          label="Téléphone (optionnel)"
+          label="Téléphone"
+          required
           type="tel"
           autoComplete="tel"
           value={phone}
           onChange={setPhone}
           placeholder="(819) 555-0123"
-          helper="Au besoin, pour un suivi plus rapide."
         />
       </div>
 
