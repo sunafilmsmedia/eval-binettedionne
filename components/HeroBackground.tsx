@@ -24,12 +24,13 @@ export default function HeroBackground() {
           keyboard={false}
           style={{ width: "100%", height: "100%" }}
         >
-          {/* Tuile claire CartoDB (Positron) grayscalée par .map-mono :
-              réseau de rues gris/blanc bien lisible sur le fond noir du hero. */}
+          {/* Tuile claire Esri « World Light Gray » (gratuite, SANS clé) grayscalée
+              par .map-mono. Remplace CartoDB qui exige désormais une clé
+              (filigrane « API KEY REQUIRED »). */}
           <TileLayer
-            url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
-            attribution='&copy; OpenStreetMap, &copy; CARTO'
-            subdomains={["a", "b", "c", "d"]}
+            url="https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}"
+            attribution="Tiles &copy; Esri"
+            maxNativeZoom={16}
           />
         </MapContainer>
       </div>
