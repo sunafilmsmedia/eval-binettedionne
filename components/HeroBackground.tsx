@@ -24,13 +24,14 @@ export default function HeroBackground() {
           keyboard={false}
           style={{ width: "100%", height: "100%" }}
         >
-          {/* Tuile claire Esri « World Light Gray » (gratuite, SANS clé) grayscalée
-              par .map-mono. Remplace CartoDB qui exige désormais une clé
-              (filigrane « API KEY REQUIRED »). */}
+          {/* Tuiles Esri « World Street Map » (gratuites, SANS clé), grayscalées
+              par .map-mono → réseau de rues gris lisible en filigrane.
+              Remplace CartoDB qui exige désormais une clé (« API KEY REQUIRED »).
+              NB : Esri met le {y} AVANT le {x}. */}
           <TileLayer
-            url="https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}"
+            url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}"
             attribution="Tiles &copy; Esri"
-            maxNativeZoom={16}
+            maxNativeZoom={17}
           />
         </MapContainer>
       </div>
